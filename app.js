@@ -10,6 +10,79 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
+const employeeQuestions = [
+    {
+        type: "input",
+        name: "employeeName",
+        message: "What is the employee's name?"
+    },
+    {
+        type: "input",
+        name: "employeeEmail",
+        message: "What is the employee's email?"
+    },
+    {
+        type: "input",
+        name: "employeeID",
+        message: "Please assign the employee an ID #:"
+    },
+    {
+        type: "list",
+        name: "employeeRole",
+        message: "What is the employee's role in your team?",
+        choices: ["Manager", "Engineer", "Intern"]
+    },
+]
+
+const managerQuestions = [
+    {
+        type: "input",
+        name: "managerOfficeNumber",
+        message: "What is the manager's office number?"
+    }
+]
+
+const engineerQuestions = [
+    {
+        type: "input",
+        name: "engineerGitHubUser",
+        message: "What is the engineer's GitHub username?"
+    },
+    {
+        type: "input",
+        name: "engineerGitHubLink",
+        message: "What is the engineer's GitHub profile link?"
+    }
+]
+
+const internQuestions = [
+    {
+        type: "input",
+        name: "internSchool",
+        message: "What school does the Intern attend?"
+    }
+]
+
+const continueQuestion = [
+    {
+        type: "list",
+        name: "addMoreEmployees",
+        message: "Would you like to add more employees to your team?",
+        choices: ["Yes", "No"]
+    }
+]
+
+function initialize() {
+    console.log("Lets build your team!");
+    console.log("We will start with your first employee's general information, followed by their role, and then obtain role specific information.")
+};
+
+function stepOne() {
+    inquirer.prompt(employeeQuestions).then(data =>{
+
+    })
+}
+initialize();
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
