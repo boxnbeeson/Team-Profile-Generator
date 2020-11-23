@@ -10,7 +10,7 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
-const employeeQuestions = [
+const questions = [
     {
         type: "input",
         name: "employeeName",
@@ -70,7 +70,7 @@ function initialize() {
 };
 
 function stepOne() {
-    inquirer.prompt(employeeQuestions).then(data => {
+    inquirer.prompt(questions).then(data => {
         console.log(data);
     
         if (data.addMoreEmployees) {

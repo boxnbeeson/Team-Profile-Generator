@@ -16,5 +16,7 @@ test('getRole() should return "Manager"', () => {
 test("Can get office number via getOffice()", () => {
   const testValue = 100;
   const e = new Manager("Foo", 1, "test@test.com", testValue);
-  expect(e.getOfficeNumber()).toBe(testValue);
+  expect(e.getOffice()).toBe(testValue);
 });
+
+//test string & test declaration did not match. line 16 asked to get office number via getOffice(), with line 19 utilizing getOfficeNumber instead. Testing procedures changed o match the question asked.
