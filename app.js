@@ -10,51 +10,53 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
+const teamDirectory = [];
+
 const questions = [
     {
         type: "input",
-        name: "employeeName",
+        name: "Name",
         message: "What is the employee's name?",
     },
     {
         type: "input",
-        name: "employeeEmail",
+        name: "Email",
         message: "What is the employee's email?"
     },
     {
         type: "input",
-        name: "employeeID",
+        name: "Id",
         message: "Please assign the employee an ID #:"
     },
     {
         type: "list",
-        name: "employeeRole",
+        name: "Role",
         message: "What is the employee's role in your team?",
         choices: ["Manager", "Engineer", "Intern"]
     },
     {
         type: "input",
-        name: "managerOfficeNumber",
+        name: "OfficeNumber",
         message: "What is the manager's office number?",
-        when: (answers) => answers.employeeRole === "Manager"
+        when: (answers) => answers.Role === "Manager"
     },
     {
         type: "input",
-        name: "engineerGitHubUser",
+        name: "engineerGithub",
         message: "What is the engineer's GitHub username?",
-        when: (answers) => answers.employeeRole === "Engineer"
+        when: (answers) => answers.Role === "Engineer"
     },
+    // {
+    //     type: "input",
+    //     name: "engineerGitHubLink",
+    //     message: "What is the engineer's GitHub profile link?",
+    //     when: (answers) => answers.employeeRole === "Engineer"
+    // },
     {
         type: "input",
-        name: "engineerGitHubLink",
-        message: "What is the engineer's GitHub profile link?",
-        when: (answers) => answers.employeeRole === "Engineer"
-    },
-    {
-        type: "input",
-        name: "internSchool",
+        name: "School",
         message: "What school does the Intern attend?",
-        when: (answers) => answers.employeeRole === "Intern"
+        when: (answers) => answers.Role === "Intern"
     },
     {
         type: "confirm",
@@ -72,7 +74,11 @@ function initialize() {
 function stepOne() {
     inquirer.prompt(questions).then(data => {
         console.log(data);
-    
+        if (data.employeeRole === 'Manager') {
+            const manager = (data.employeeName, data.employeeEmail, data.employeeID, data.managerOfficeNumber);
+            teamDirectory.push(manager);
+            console.log(teamDirectory);
+        }
         if (data.addMoreEmployees) {
             return stepOne();
         } else if (data.addMoreEmployees === false) {
