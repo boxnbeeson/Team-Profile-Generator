@@ -11,12 +11,19 @@
   * [License](#license)
   
   ## <a name="demo"></a>Demo
-  Will do in post.
-  ![](insert screenshots/gifs here)
+  Tutorial Video: https://youtu.be/JWTXfW0fUBA
+  <br>
+  After installing the required dependencies, you may start the CLS application by typing 'node app.js' into the terminal.
+  <br>
+  You will be prompted with questions regarding your team. Once you have finished inputting all of your information, you will select no when asked if you would like to add more employees.
+  ![](assets/demo1.png)
+  <br>
+  After selecting no, the application will formulate a team for you in the output folder, in the file 'team.html'. Your webpage will look similar to the screenshot below:
+  ![](assets/demo2.png)
   ## <a name="installation"></a>Installation
-  To run this program, node.js and inquirer must be installed. Jest is also installed to run tests.
+  To run this program, node.js (https://nodejs.org/en/) and inquirer (https://www.npmjs.com/package/inquirer) must be installed. Jest is also installed to run tests.
   ## <a name="testing"></a>Testing
-  Testing is completed using jest, and can be ran in the terminal with 'npm run test'.
+  Testing is completed using jest (https://jestjs.io/docs/en/getting-started), and can be ran in the terminal with 'npm run test'.
   ## <a name="devInfo"></a>Developer's Information
   Feel free to contact me using the information below if you have any questions or feedback!
   <br>
