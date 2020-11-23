@@ -14,7 +14,7 @@ const employeeQuestions = [
     {
         type: "input",
         name: "employeeName",
-        message: "What is the employee's name?"
+        message: "What is the employee's name?",
     },
     {
         type: "input",
@@ -32,56 +32,55 @@ const employeeQuestions = [
         message: "What is the employee's role in your team?",
         choices: ["Manager", "Engineer", "Intern"]
     },
-]
-
-const managerQuestions = [
     {
         type: "input",
         name: "managerOfficeNumber",
-        message: "What is the manager's office number?"
-    }
-]
-
-const engineerQuestions = [
+        message: "What is the manager's office number?",
+        when: (answers) => answers.employeeRole === "Manager"
+    },
     {
         type: "input",
         name: "engineerGitHubUser",
-        message: "What is the engineer's GitHub username?"
+        message: "What is the engineer's GitHub username?",
+        when: (answers) => answers.employeeRole === "Engineer"
     },
     {
         type: "input",
         name: "engineerGitHubLink",
-        message: "What is the engineer's GitHub profile link?"
-    }
-]
-
-const internQuestions = [
+        message: "What is the engineer's GitHub profile link?",
+        when: (answers) => answers.employeeRole === "Engineer"
+    },
     {
         type: "input",
         name: "internSchool",
-        message: "What school does the Intern attend?"
-    }
-]
-
-const continueQuestion = [
+        message: "What school does the Intern attend?",
+        when: (answers) => answers.employeeRole === "Intern"
+    },
     {
-        type: "list",
+        type: "confirm",
         name: "addMoreEmployees",
         message: "Would you like to add more employees to your team?",
-        choices: ["Yes", "No"]
     }
 ]
 
 function initialize() {
     console.log("Lets build your team!");
     console.log("We will start with your first employee's general information, followed by their role, and then obtain role specific information.")
+    stepOne();
 };
 
 function stepOne() {
-    inquirer.prompt(employeeQuestions).then(data =>{
-
-    })
+    inquirer.prompt(employeeQuestions).then(data => {
+        console.log(data);
+    
+        if (data.addMoreEmployees) {
+            return stepOne();
+        } else if (data.addMoreEmployees === false) {
+            console.log("team complete!");
+        };
+    });
 }
+
 initialize();
 
 // Write code to use inquirer to gather information about the development team members,
