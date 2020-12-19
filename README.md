@@ -20,10 +20,14 @@
   <br>
   After selecting no, the application will formulate a team for you in the output folder, in the file 'team.html'. Your webpage will look similar to the screenshot below:
   ![](assets/demo2.png)
+
   ## <a name="installation"></a>Installation
+
   To run this program, node.js (https://nodejs.org/en/) and inquirer (https://www.npmjs.com/package/inquirer) must be installed. Jest is also installed to run tests.
+
   ## <a name="testing"></a>Testing
   Testing is completed using jest (https://jestjs.io/docs/en/getting-started), and can be ran in the terminal with 'npm run test'.
+
   ## <a name="devInfo"></a>Developer's Information
   Feel free to contact me using the information below if you have any questions or feedback!
   <br>
@@ -32,6 +36,7 @@
   Github Link: <https://github.com/jpbeeson>
   <br>
   Email: <beeson.jp@gmail.com>
+  
   ## <a name="credientials"></a>Credientials
   I utilized the following websites to help build this application: 
 
